@@ -1,24 +1,10 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A simple forum web application that allows you to create posts with text, images, etc. and view other
+users' posts
 
-Things you may want to cover:
+- Uses Bcrypt for user authentication
+- Uses Ckeditor for post creator
+- Uses Paperclip to handle image uploads
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+latest version hosted on https://ancient-waters-95950.herokuapp.com/
