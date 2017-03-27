@@ -1,0 +1,21 @@
+
+<div class="row well" style="background-color: white">
+	<div class="container">
+		<h1><%= @post.title %></h1>
+		<%= @post.body.html_safe %>
+	</div>
+	<br>
+</div>
+<br>
+<strong><span>by: <%= link_to @post.user.username, user_path(@post.user.id) %> </span></strong>
+<br> <br>
+
+<% if @post.user.id == current_user.id %>
+	<%= link_to "Delete Post", post_path(@post), method: :delete, class: "btn btn-primary" %>
+	<span> </span>
+	<%= link_to "Edit Post", edit_post_path(@post), class: "btn btn-primary" %>
+<% end %>
+<br>
+<br>
+<%= link_to "Back to Posts", posts_path, class: "btn btn-primary" %>
+
