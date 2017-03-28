@@ -3,7 +3,19 @@ class PostsController < ApplicationController
 
 	def index
 		@posts = Post.all
+		
 	end
+	def search
+		@search = params[:search]
+
+		if @search.length > 0
+			@posts = Post.where("title like ?", "%#{@search}%")
+		else
+			@posts = Post.all
+		end
+		render :partial => 'posts'
+	end
+	
 
 	def new
 		@post = Post.new
@@ -42,6 +54,8 @@ class PostsController < ApplicationController
 		@post.destroy
 		redirect_to posts_path
 	end
+
+
 
 	private
 

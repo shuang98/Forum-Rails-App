@@ -1,12 +1,14 @@
 
 <h1>Posts</h1>
 
+<span>Search:</span>
+<%= form_tag posts_path, remote: true do %>
+  	<%= text_field_tag "search-bar", "" %> 
+<% end %>
+
+<br> <br>
 <%= link_to 'New Post', new_post_path, class: "btn btn-primary" %> <br>
 <br>
-<% @posts.each do |post|%>
-	<div class="well">
-		<h3><strong><%= link_to post.title, post_path(post.id) %> </strong></h3>
-		<sub> by: <%= link_to post.user.username, user_path(post.user.id) %> </sub>
-
-	</div>
-<% end %>
+<div id="posts">
+	<%= render 'posts' %>
+</div>

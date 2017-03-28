@@ -1,0 +1,6 @@
+<% @posts.each do |post|%>
+	<div class="well" id="<%= post.title %>">
+		<h3><strong><%= link_to post.title, post_path(post.id) %> </strong></h3>
+		<sub> by: <%= link_to post.user.username, user_path(post.user.id) %> </sub>
+	</div>
+<% end %>

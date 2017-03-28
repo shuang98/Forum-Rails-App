@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   	resources :users
   	resources :posts
+
+    get 'search' => 'posts#search'
     
 
   	get '*unmatched_route', to: 'application#not_found'
